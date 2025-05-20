@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20; 
 
 contract Escrow {
-    address public marketplace; // Address of the authorized Marketplace contract
+     address public marketplace; // Will be set after deployment
 
     // Payment Details Struct
     struct Payment {
@@ -21,9 +21,8 @@ contract Escrow {
         _; // Continue execution
     }
 
-    // Constructor to set the address of the Marketplace contract at deployment
-    constructor(address _marketplace) {
-        marketplace = _marketplace;
+    constructor() {
+        // Empty constructor, marketplace will be set later
     }
 
     // Function to deposit funds into escrow
