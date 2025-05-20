@@ -25,6 +25,12 @@ contract Escrow {
         // Empty constructor, marketplace will be set later
     }
 
+     // Set Marketplace address once deployed
+    function setMarketplace(address _marketplace) external {
+        require(marketplace == address(0), "Marketplace already set");
+        marketplace = _marketplace;
+    }
+
     // Function to deposit funds into escrow
     // Only callable by the Marketplace contract
     function deposit(uint256 listingId, address seller, address buyer) external payable onlyMarketplace {
